@@ -81,6 +81,14 @@ int ofxMultiKinectV2::getDeviceCount()
     return KinectV2DeviceManager::getManager().getDeviceCount();
 }
 
+int ofxMultiKinectV2::getDeviceIndex(string serial){
+    vector<string> serials = KinectV2DeviceManager::getManager().getSerials();
+    for(int i=0; i<serials.size();i++){
+        if(serial == serials[i]) return i;
+    }
+    return -1;
+}
+
 void ofxMultiKinectV2::open(bool enableColor, bool enableIr, int deviceIndex, int oclDeviceIndex)
 {
     close();

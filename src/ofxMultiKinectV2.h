@@ -22,6 +22,7 @@ public:
     ~ofxMultiKinectV2();
     
     static int getDeviceCount();
+    static int getDeviceIndex(string serial);
     void open(bool enableColor = true, bool enableIr = true, int deviceIndex = 0, int oclDeviceIndex = -1);
     void start();
     void update();
